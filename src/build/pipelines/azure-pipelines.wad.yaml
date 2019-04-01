@@ -1,10 +1,10 @@
-variables:
-    Parameters.configuration:'x86'
-    BuildConfiguration: 'Release'
-    
 resources:
 - repo: self
 
+variables:
+    Parameters.configuration: x86
+    BuildConfiguration: Release
+    
 jobs:
 
 - job: Job_1
