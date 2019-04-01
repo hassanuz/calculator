@@ -1,4 +1,4 @@
-variable:
+variables:
     Parameters.configuration:'x86'
     BuildConfiguration: 'Release'
     
