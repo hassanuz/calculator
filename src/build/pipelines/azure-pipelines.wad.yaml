@@ -47,7 +47,7 @@ jobs:
     displayName: 'Build WinAppDriverTests'
     inputs:
       solution: src/CalculatorWADTests/CalculatorTest.sln
-      platform: x86
+      platform: Any CPU
       configuration: '$(BuildConfiguration)'
     continueOnError: true
 
