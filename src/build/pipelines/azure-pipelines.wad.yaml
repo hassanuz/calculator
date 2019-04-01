@@ -2,8 +2,8 @@ resources:
 - repo: self
 
 variables:
-    Parameters.configuration: Release
-    BuildConfiguration: x86
+    Parameters.configuration: x86
+    BuildConfiguration: Release
     
 jobs:
 
@@ -48,7 +48,7 @@ jobs:
     inputs:
       solution: src/CalculatorWADTests/CalculatorTest.sln
       platform: x86
-      configuration: '$(Parameters.configuration)'
+      configuration: '$(BuildConfiguration)'
     continueOnError: true
 
   - task: VSBuild@1
