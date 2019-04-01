@@ -30,7 +30,6 @@ namespace CalculatorTest
         [TestMethod]
         public void Addition()
         {
-            //Thread.Sleep(5000);
             // Find the buttons by their names and click them in sequence to peform 1 + 7 = 8
             session.FindElementByName("One").Click();
             session.FindElementByName("Plus").Click();
@@ -42,7 +41,6 @@ namespace CalculatorTest
         [TestMethod]
         public void Division()
         {
-            //Thread.Sleep(5000);
             // Find the buttons by their accessibility ids and click them in sequence to perform 88 / 11 = 8
             session.FindElementByAccessibilityId("num8Button").Click();
             session.FindElementByAccessibilityId("num8Button").Click();
@@ -56,7 +54,6 @@ namespace CalculatorTest
         [TestMethod]
         public void Multiplication()
         {
-            //Thread.Sleep(5000);
             // Find the buttons by their names using XPath and click them in sequence to perform 9 x 9 = 81
             session.FindElementByXPath("//Button[@Name='Nine']").Click();
             session.FindElementByXPath("//Button[@Name='Multiply by']").Click();
@@ -68,7 +65,6 @@ namespace CalculatorTest
         [TestMethod]
         public void Subtraction()
         {
-            //Thread.Sleep(5000);
             // Find the buttons by their accessibility ids using XPath and click them in sequence to perform 9 - 1 = 8
             session.FindElementByXPath("//Button[@AutomationId=\"num9Button\"]").Click();
             session.FindElementByXPath("//Button[@AutomationId=\"minusButton\"]").Click();
@@ -92,7 +88,6 @@ namespace CalculatorTest
         [DataRow("Eight", "Divide by", "Eight", "1")]
         public void Templatized(string input1, string operation, string input2, string expectedResult)
         {
-            //Thread.Sleep(5000);
             // Run sequence of button presses specified above and validate the results
             session.FindElementByName(input1).Click();
             session.FindElementByName(operation).Click();
@@ -106,9 +101,6 @@ namespace CalculatorTest
         {
             // Create session to launch a Calculator window
             Setup(context);
-
-            Thread.Sleep(5000);
-
             // Identify calculator mode by locating the header
             try
             {
@@ -129,9 +121,6 @@ namespace CalculatorTest
                 Thread.Sleep(TimeSpan.FromSeconds(1));
                 Assert.IsTrue(header.Text.Equals("Standard", StringComparison.OrdinalIgnoreCase));
             }
-
-            Thread.Sleep(5000);
-
             // Locate the calculatorResult element
             calculatorResult = session.FindElementByAccessibilityId("CalculatorResults");
             Assert.IsNotNull(calculatorResult);

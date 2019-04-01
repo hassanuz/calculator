@@ -1,5 +1,3 @@
-# This template contains jobs to run unit tests on the interactive test agents.
-
 parameters:
   platform: ''
   reimageServiceConnection: ''
