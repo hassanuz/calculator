@@ -2,8 +2,8 @@ resources:
 - repo: self
 
 variables:
-    Parameters.configuration: x86
-    BuildConfiguration: Release
+    Parameters.configuration: Release
+    BuildConfiguration: x86
     
 jobs:
 
@@ -47,7 +47,7 @@ jobs:
     displayName: 'Build WinAppDriverTests'
     inputs:
       solution: src/CalculatorWADTests/CalculatorTest.sln
-      platform: 'x86'
+      platform: x86
       configuration: '$(Parameters.configuration)'
     continueOnError: true
 
