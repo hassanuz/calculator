@@ -1,5 +1,5 @@
 parameters:
-  platform: ''
+  platform: x86
 
 resources:
 - repo: self
