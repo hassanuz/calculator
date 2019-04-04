@@ -275,7 +275,7 @@
     <Xml Include="UnitTestApp.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="CalculatorUnitTests_TemporaryKey.pfx" />
+    <None Include="..\CalculatorUnitTests_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="..\..\Calculator\Resources\en-US\CEngineStrings.resw" />
