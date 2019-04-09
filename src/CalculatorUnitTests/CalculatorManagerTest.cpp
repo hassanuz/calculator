@@ -26,6 +26,7 @@ namespace CalculatorManagerTest
 
         void Reset()
         {
+
             m_isError = false;
             m_maxDigitsCalledCount = 0;
             m_binaryOperatorReceivedCallCount = 0;
