@@ -120,7 +120,7 @@ namespace CalculatorTest
         [ClassCleanup]
         public void ClassCleanup()
         {
-            base.TearDown();
+            TearDown();
         }
 
         [TestInitialize]
