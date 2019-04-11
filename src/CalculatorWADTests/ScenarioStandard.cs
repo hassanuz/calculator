@@ -118,7 +118,7 @@ namespace CalculatorTest
         }
 
         [ClassCleanup]
-        public void ClassCleanup()
+        public static void ClassCleanup()
         {
             TearDown();
         }
@@ -126,7 +126,6 @@ namespace CalculatorTest
         [TestInitialize]
         public void Clear()
         {
-            Thread.Sleep(10000);
             session.FindElementByName("Clear").Click();
             Assert.AreEqual("0", GetCalculatorResultText());
         }
