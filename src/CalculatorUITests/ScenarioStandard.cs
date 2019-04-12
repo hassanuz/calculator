@@ -6,7 +6,7 @@ using OpenQA.Selenium.Appium.Windows;
 using System.Threading;
 using System;
 
-namespace CalculatorTest
+namespace CalculatorUITests
 {
     [TestClass]
     public class StandardModeTests : CalculatorSession

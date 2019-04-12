@@ -7,7 +7,7 @@ using OpenQA.Selenium.Remote;
 using System;
 using System.Threading;
 
-namespace CalculatorTest
+namespace CalculatorUITests
 {
     public class CalculatorSession
     {
