@@ -55,7 +55,7 @@ namespace CalculatorUITests
             session.FindElementByAccessibilityId("num9Button").Click();
             session.FindElementByAccessibilityId("minusButton").Click();
             session.FindElementByAccessibilityId("num1Button").Click();
-            session.FindElementByAccessibilityId("equalButton").Click();
+            session.FindElementByAccessibilityId("equalsButton").Click();
             Assert.AreEqual("8", GetCalculatorResultText());
         }
 
