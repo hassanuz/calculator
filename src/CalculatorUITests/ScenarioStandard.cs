@@ -1,18 +1,5 @@
-//******************************************************************************
-//
-// Copyright (c) 2017 Microsoft Corporation. All rights reserved.
-//
-// This code is licensed under the MIT License (MIT).
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-//
-//******************************************************************************
+// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Appium.Windows;
@@ -54,11 +41,10 @@ namespace CalculatorTest
         [TestMethod]
         public void Multiplication()
         {
-            // Find the buttons by their names using XPath and click them in sequence to perform 9 x 9 = 81
-            session.FindElementByXPath("//Button[@Name='Nine']").Click();
-            session.FindElementByXPath("//Button[@Name='Multiply by']").Click();
-            session.FindElementByXPath("//Button[@Name='Nine']").Click();
-            session.FindElementByXPath("//Button[@Name='Equals']").Click();
+            session.FindElementByAccessibilityId("num9Button").Click();
+            session.FindElementByAccessibilityId("multiplyButton").Click();
+            session.FindElementByAccessibilityId("num9Button").Click();
+            session.FindElementByAccessibilityId("equalsButton").Click();
             Assert.AreEqual("81", GetCalculatorResultText());
         }
 
@@ -66,27 +52,14 @@ namespace CalculatorTest
         public void Subtraction()
         {
             // Find the buttons by their accessibility ids using XPath and click them in sequence to perform 9 - 1 = 8
-            session.FindElementByXPath("//Button[@AutomationId=\"num9Button\"]").Click();
-            session.FindElementByXPath("//Button[@AutomationId=\"minusButton\"]").Click();
-            session.FindElementByXPath("//Button[@AutomationId=\"num1Button\"]").Click();
-            session.FindElementByXPath("//Button[@AutomationId=\"equalButton\"]").Click();
+            session.FindElementByAccessibilityId("num9Button").Click();
+            session.FindElementByAccessibilityId("minusButton").Click();
+            session.FindElementByAccessibilityId("num1Button").Click();
+            session.FindElementByAccessibilityId("equalButton").Click();
             Assert.AreEqual("8", GetCalculatorResultText());
         }
 
-        [TestMethod]
-        [DataRow("One", "Plus", "Seven", "8")]
-        [DataRow("Nine", "Minus", "One", "8")]
-        [DataRow("Eight", "Divide by", "Eight", "1")]
-        public void Templatized(string input1, string operation, string input2, string expectedResult)
-        {
-            // Run sequence of button presses specified above and validate the results
-            session.FindElementByName(input1).Click();
-            session.FindElementByName(operation).Click();
-            session.FindElementByName(input2).Click();
-            session.FindElementByName("Equals").Click();
-            Assert.AreEqual(expectedResult, GetCalculatorResultText());
-        }
-        
+
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
         {
