@@ -27,8 +27,7 @@ namespace CalculatorUITests
                 appCapabilities.SetCapability("app", CalculatorAppId);
                 appCapabilities.SetCapability("deviceName", "WindowsPC");
                 session = new WindowsDriver<WindowsElement>(new Uri(WindowsApplicationDriverUrl), appCapabilities);
-                // Set implicit timeout to 5 seconds to make element search to retry every 120 seconds for at most three times
-                session.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(120);
+                session.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(180);
                 Assert.IsNotNull(session);
             }
         }
