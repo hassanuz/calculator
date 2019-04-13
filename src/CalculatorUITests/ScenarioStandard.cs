@@ -44,7 +44,7 @@ namespace CalculatorUITests
             session.FindElementByAccessibilityId("num9Button").Click();
             session.FindElementByAccessibilityId("multiplyButton").Click();
             session.FindElementByAccessibilityId("num9Button").Click();
-            session.FindElementByAccessibilityId("equalsButton").Click();
+            session.FindElementByAccessibilityId("equalButton").Click();
             Assert.AreEqual("81", GetCalculatorResultText());
         }
 
@@ -55,7 +55,7 @@ namespace CalculatorUITests
             session.FindElementByAccessibilityId("num9Button").Click();
             session.FindElementByAccessibilityId("minusButton").Click();
             session.FindElementByAccessibilityId("num1Button").Click();
-            session.FindElementByAccessibilityId("equalsButton").Click();
+            session.FindElementByAccessibilityId("equalButton").Click();
             Assert.AreEqual("8", GetCalculatorResultText());
         }
 
