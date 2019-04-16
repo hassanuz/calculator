@@ -27,14 +27,14 @@ jobs:
       inlineScript: 'Set-DisplayResolution -Width 1920 -Height 1080 -Force'
     continueOnError: true
 
-   - task: DownloadBuildArtifacts@0
-     displayName: 'Download Build Artifacts'
-     inputs:
-       buildType: specific
-       project: '96681257-9d83-44bf-a018-305e019cc129'
-       pipeline: 18
-       artifactName: drop
-       downloadPath: '$(build.artifactstagingdirectory)\AppxPackages'
+  - task: DownloadBuildArtifacts@0
+    displayName: 'Download Build Artifacts'
+    inputs:
+      buildType: specific
+      project: '96681257-9d83-44bf-a018-305e019cc129'
+      pipeline: 18
+      artifactName: drop
+      downloadPath: '$(build.artifactstagingdirectory)\AppxPackages'
 
   - task: VisualStudioTestPlatformInstaller@1
     displayName: 'Visual Studio Test Platform Installer'
