@@ -1,5 +1,4 @@
-# This template contains steps to (1) Build the app for the defined architecture and (2) run the WinAppDriver UI tests on a hosted agent.
-# The job containing these steps must set the variables 'Parameters.Configuration'. The BuildConfiguration must be set to 'Release' for WAD tests to work.
+# The BuildConfiguration must be set to 'Release' for UI tests to work.
 
 #parameters:
 #  platform: ''
@@ -11,7 +10,7 @@ variables:
     
 jobs:
 
-- job: Job_UITests
+- job: UITests
   displayName: Test Automation
   condition: succeeded()
   pool:
