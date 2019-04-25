@@ -30,7 +30,7 @@ namespace CalculatorUITests
         {
             // Find the buttons by their accessibility ids and click them in sequence to perform 88 / 11 = 8
             session.FindElementByAccessibilityId("num8Button").Click();
-            session.FindElementByAccessibilityId("num8Button").Click();
+            session.FindElementByAccessibilityId("num9Button").Click();
             session.FindElementByAccessibilityId("divideButton").Click();
             session.FindElementByAccessibilityId("num1Button").Click();
             session.FindElementByAccessibilityId("num1Button").Click();
