@@ -55,11 +55,10 @@ jobs:
       arguments: '-NonInteractive -Force:$true  -Verb RunAs'
     condition: succeededOrFailed()
 
-  - task: PowerShell@1
-    displayName: 'Start WinAppDriver'
+  - task: WinAppDriver.winappdriver-pipelines-task.winappdriver-pipelines-task.Windows Application Driver@0
+    displayName: 'Start - WinAppDriver'
     inputs:
-      scriptType: inlineScript
-      inlineScript: 'Start-Process -FilePath "C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe" -Verb RunAs '
+      AgentResolution: 1080p
 
   - task: VSTest@2 
     displayName: 'VsTest - Execute WinAppDriver Tests'
@@ -72,3 +71,8 @@ jobs:
       platform: '$(BuildPlatform)'
       configuration: '$(BuildConfiguration)'
     continueOnError: true
+    
+  - task: WinAppDriver.winappdriver-pipelines-task.winappdriver-pipelines-task.Windows Application Driver@0
+    displayName: 'Stop - WinAppDriver'
+    inputs:
+    OperationType: Stop
